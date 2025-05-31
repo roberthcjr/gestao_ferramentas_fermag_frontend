@@ -18,11 +18,13 @@ export default class ApiClient {
   post(
     url: string,
     body: string | FormData,
-    headers?: { "Content-Type": string }
+    headers?: { "Content-Type": string; Authorization?: string },
   ): Promise<Response> {
     const customHeaders = this.headers;
     if (headers)
-      customHeaders.set(Object.keys(headers)[0], Object.values(headers)[0]);
+      for (const [key, value] of Object.entries(headers)) {
+        customHeaders.set(key, value);
+      }
     const postRequest = new Request(`${this.api}/${url}`, {
       method: "POST",
       headers: customHeaders,

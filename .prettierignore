@@ -1,0 +1,7 @@
+# Ignore artifacts:
+pnpm-lock.yaml
+.next
+mock_files
+src/components/ui/*
+src/lib/utils*
+src/hooks/use-mobile*

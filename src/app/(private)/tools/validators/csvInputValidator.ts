@@ -9,12 +9,12 @@ export const csvSchema = z.object({
     .any()
     .refine(
       (file) => file?.size <= MAX_FILE_SIZE,
-      `O arquivo deve ter até ${MAX_FILE_SIZE / MB_RATIO}MB.`
+      `O arquivo deve ter até ${MAX_FILE_SIZE / MB_RATIO}MB.`,
     )
     .refine(
       (file) => ACCEPTED_MIME_TYPES.includes(file?.type),
       `Apenas arquivos no formato ${ACCEPTED_MIME_TYPES.join(
-        ","
-      )} são suportados.`
+        ",",
+      )} são suportados.`,
     ),
 });

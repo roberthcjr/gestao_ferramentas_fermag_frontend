@@ -9,7 +9,7 @@ export default class AuthenticationService extends ApiClient {
     const res = await super.post(
       `${this.endpoint}/login`,
       JSON.stringify({ username, password }),
-      { "Content-Type": "application/json" }
+      { "Content-Type": "application/json" },
     );
 
     if (!res.ok) {

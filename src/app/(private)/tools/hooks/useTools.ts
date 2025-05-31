@@ -7,11 +7,11 @@ import { csvSchema } from "../validators/csvInputValidator";
 import { z } from "zod";
 import { showErrorToast, showSuccessToast } from "../components/toaster";
 
-type UseTools= {
+type UseTools = {
   setOpen: Dispatch<SetStateAction<boolean>>;
-}
+};
 
-export function useTools({setOpen}: UseTools) {
+export function useTools({ setOpen }: UseTools) {
   const queryClient = useQueryClient();
   const toolsService = useMemo(() => new ToolsService(), []);
 
